@@ -16,6 +16,9 @@ def test_E():
 def test_d2():
     assert glicko.d2(1500, [(1400, 30, 1), (1550, 100, 0), (1700, 300, 0)]) == 53670.85
 
+def test_outcome():
+    assert glicko.outcome((1400, 80), (1500, 150)) == 0.376
+
 def test_glicko():
     matches = [(1400, 30, 1), (1550, 100, 0), (1700, 300, 0)]
     assert glicko.glicko(1500, 200, matches) == (1464, 151.4)
